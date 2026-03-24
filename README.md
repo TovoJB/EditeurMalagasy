@@ -1,28 +1,58 @@
-1+ **Membre du groupe:**
-n° 09 TOVO Jean Bien Aimé         ISAIA 5
-Role: Pris en charge du developpement du lemmatisation et Autocomplétion
+# Projet ISAIA 5 – Traitement Automatique du Malgache
 
-n° 08 RAJOHARIVELO Andriarivony Antenaina         ISAIA 5
-Role: Pris en charge du developpement du frontend
+[![Licence](https://img.shields.io/badge/Licence-MIT-green)](LICENSE)  
+[![Python](https://img.shields.io/badge/Python-3.10-blue)](https://www.python.org/)
 
-n° 12 RAKOTOMAHARAVO Vali Fanomezantsoa         ISAIA 5
-Role: Pris en charge du developpement de la verification à base de règles
+## Description
 
-n° 02 RAHERIMANANA Andriniaina Koloina Mandresy         ISAIA 5
-Role: Pris en charge du developpement du correcteur orthographique
+Ce projet vise à développer des outils de traitement automatique du malgache, incluant :
 
-**Bibliographie**
-source de données : tenymalagasy.org
+- Correction orthographique  
+- Vérification des règles de base  
+- Lemmatisation (avec modèle encodeur-décodeur)  
+- Autocomplétion (méthode markovienne)  
 
-**Liste et brève description du fonctionnalité IA**
-**correction orthographique** : scrapping des données, tokenisation et normalisation des inputs, chargement du dictionnaire, puis detection des erreurs, recherche de candidats, calcul de similarité et selection du meilleur candidat. En dernier, la validation, la correction et la reconstruction de l'input
+Les données sont extraites du site [tenymalagasy.org](https://tenymalagasy.org).
 
-**Vérification des règles de base**: Citez les alaphabets malagasy, determiner les règles (les lettres interdites et consonnes interdites en fin de mots), combinaison de consonnes autorisées, et puis création d'une fonction interne pour vérifier les paires de consonnes. Enfin, detection des erreurs a partir des regle Regex classique
+---
 
-**Lemmatisation** : scrapping du site web tenymalagasy, construction du datasets d'entrainement et entrainement du modèle Seq2Seq + Infrérence
+## Membres du groupe
 
-**Autocomplétion**: utilisation du méthode markovienne
+| N°  | Nom | Rôle |
+|-----|-----|------|
+| 09  | **TOVO Jean Bien Aimé** | Lemmatisation, autocomplétion, scraping des datasets |
+| 08  | **RAJOHARIVELO Andriarivony Antenaina** | Développement du frontend |
+| 12  | **RAKOTOMAHARAVO Vali Fanomezantsoa** | Vérification des règles à base de regex |
+| 02  | **RAHERIMANANA Andriniaina Koloina Mandresy** | Correcteur orthographique |
 
+---
+
+## Fonctionnalités principales
+
+### Correction orthographique
+- Scraping des données depuis le site source.  
+- Tokenisation et normalisation des entrées.  
+- Chargement du dictionnaire malgache.  
+- Détection des erreurs et recherche de candidats.  
+- Calcul de similarité et sélection du meilleur candidat.  
+- Validation, correction et reconstruction des entrées.
+
+### Vérification des règles de base
+- Identification de l’alphabet malgache.  
+- Définition des règles : lettres interdites, consonnes interdites en fin de mots, combinaisons de consonnes autorisées.  
+- Fonction interne pour vérifier les paires de consonnes.  
+- Détection des erreurs via des expressions régulières (Regex).
+
+### Lemmatisation
+- Scraping du site pour constituer le dataset.  
+- Construction du dataset d’entraînement.  
+- Entraînement d’un modèle **encodeur-décodeur (Seq2Seq)** pour la lemmatisation.  
+- Inférence sur de nouveaux mots.
+
+### Autocomplétion
+- Implémentation d’une méthode **markovienne** pour la suggestion de mots ou phrases.
+
+---
 
 # 🇲🇬 Malagasy Morpheme Segmentation — DataML
 

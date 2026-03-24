@@ -75,6 +75,23 @@ jupyter notebook
 
 ---
 
+## 📈 Aperçu et Performances
+
+### 1. Segmentation en Action (Demo)
+Le modèle est capable de segmenter des mots complexes tout en isolant la racine entre crochets.
+![Démo de segmentation](./lemmnation/models/demo.png)
+
+### 2. Statistiques du Vocabulaire
+Nous avons scrapé plus de **40 000 mots** avec leurs **règles grammaticales** respectives, créant ainsi une base solide pour l'apprentissage.
+avec
+![Vocabulaire](./lemmnation/models/vocabular.png)
+
+### 3. Courbes d'Apprentissage
+L'entraînement sur GPU a permis d'atteindre une précision de **98.76%** rapidement.
+![Courbes d'entraînement](./lemmnation/models/training_curves.png)
+
+---
+
 ## 🔗 Dossiers — Cliquez pour les détails
 
 - **[📂 scraping/](./scraping/README.md)** — Scraping des racines malgaches depuis tenymalagasy.org

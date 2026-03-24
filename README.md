@@ -64,18 +64,19 @@ Les données sont extraites du site [tenymalagasy.org](https://tenymalagasy.org)
 
 ```
 DataML/
-├── scraping/          ← Collecte et préparation des données
-├── lemmnation/        ← Modèle de segmentation morphologique (Seq2Seq)
-├── Backend/           ← API de service (FastAPI/Flask)
-└── Front/             ← Interface utilisateur (React/Vue)
+├── scraping/           ← Collecte et préparation des données
+├── lemmnation/         ← Modèle de segmentation morphologique (Seq2Seq)
+├── Backend/            ← API de service (FastAPI)
+└── Frontend/           ← Interface utilisateur principale
+    └── next-editor/    ← Éditeur de texte intelligent (Next.js)
 ```
 
 | Dossier | Rôle | Technologies |
 |---|---|---|
 | [`📂 scraping/`](./scraping/README.md) | Web scraping des racines malgaches, construction du dataset d'entraînement | Python, BeautifulSoup, Pandas |
 | [`📂 lemmnation/`](./lemmnation/README.md) | Modèle Seq2Seq pour segmenter les mots en morphèmes et identifier la racine | TensorFlow, Keras, LSTM |
-| [`📂 Backend/`](./Backend/README.md) | Serveur d'API pour exposer le modèle Keras | FastAPI, Uvicorn |
-| [`📂 Front/`](./Front/README.md) | UI interactive pour tester la segmentation | React, Tailwind CSS |
+| [`📂 Backend/`](./Backend/README.md) | Serveur d'API pour exposer le modèle Keras et la logique d'orthographe | FastAPI, Uvicorn |
+| [`📂 Frontend/next-editor/`](./Frontend/next-editor/README.md) | UI interactive (éditeur intelligent) | Next.js, TypeScript |
 
 ---
 
@@ -100,25 +101,28 @@ DataML/
 
 ## 🚀 Démarrage Rapide
 
-### 1. Cloner le projet
-
+### 1. Configuration du Backend (API)
+Le backend gère la lemmatisation, la correction orthographique et les suggestions.
 ```bash
-git clone <url-du-repo>
-cd DataML
+cd Backend
+pip install -r requirements.txt
+python main.py
 ```
+*Le backend sera accessible sur `http://localhost:8000`.*
 
-### 2. Installer les dépendances
-
+### 2. Configuration du Frontend (Éditeur)
+L'interface utilisateur permet de tester l'autocomplétion et l'analyse en temps réel.
 ```bash
-pip install -r scraping/requirements.txt
+cd Frontend/next-editor
+npm install
+npm run dev
 ```
+*Le frontend sera disponible sur `http://localhost:3000`.*
 
-### 3. Lancer Jupyter
-
-```bash
-cd lemmnation
-jupyter notebook
-```
+### 3. Fonctionnement de l'Éditeur
+- **Auto-complétion** : Tapez du texte pour voir des suggestions "fantômes". Appuyez sur **TAB** pour les accepter.
+- **Analyse au survol** : Passez la souris sur un mot pour voir sa racine et sa structure segmentée.
+- **Vérification orthographique** : Au survol, si le mot ne respecte pas les règles malgaches, il sera souligné en rouge.
 
 > ⚠️ **GPU recommandé** — Voir [`lemmnation/README.md`](./lemmnation/README.md) pour la configuration GPU.
 

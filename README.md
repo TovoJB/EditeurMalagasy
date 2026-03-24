@@ -150,6 +150,9 @@ avec
 L'entraînement sur GPU a permis d'atteindre une précision de **98.76%** rapidement.
 ![Courbes d'entraînement](./lemmnation/models/training_curves.png)
 
+### 1. Demostration (Demo)
+![Démo de segmentation](./photo/demo1.png)
+
 ---
 
 ## 🔗 Dossiers — Cliquez pour les détails

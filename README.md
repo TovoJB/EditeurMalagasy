@@ -24,10 +24,10 @@ Les données sont extraites du site [tenymalagasy.org](https://tenymalagasy.org)
 
 | N°  | Nom | Rôle |
 |-----|-----|------|
-| 09  | **TOVO Jean Bien Aimé** | Lemmatisation, autocomplétion, scraping des datasets |
-| 08  | **RAJOHARIVELO Andriarivony Antenaina** | Développement du frontend |
-| 12  | **RAKOTOMAHARAVO Vali Fanomezantsoa** | Vérification des règles à base de regex |
-| 02  | **RAHERIMANANA Andriniaina Koloina Mandresy** | Correcteur orthographique |
+| 09  | **TOVO Jean Bien Aimé** | Lemmatisation, autocomplétion, scraping des datasets , pre-processing dataset , model training|
+| 08  | **RAJOHARIVELO Andriarivony Antenaina** | Développement du frontend  , pre-processing dataset|
+| 12  | **RAKOTOMAHARAVO Vali Fanomezantsoa** | Vérification des règles à base de regex , pre-processing dataset |
+| 02  | **RAHERIMANANA Andriniaina Koloina Mandresy** | Correcteur orthographique , pre-processing dataset |
 
 ---
 

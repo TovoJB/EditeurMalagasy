@@ -146,7 +146,7 @@ npm run dev
 ## 📈 Aperçu et Performances
 
 ### 1. Segmentation en Action (Demo)
-Le modèle est capable de segmenter des mots complexes tout en isolant la racine entre crochets.
+Le modèle encodeur-décodeur (Seq2Seq) est capable de segmenter des mots complexes tout en isolant la racine entre crochets.
 ![Démo de segmentation](./lemmnation/models/demo.png)
 
 ### 2. Statistiques du Vocabulaire

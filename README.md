@@ -183,7 +183,7 @@ L'outil intègre un moteur de recherche basé sur l'IA pour trouver rapidement l
 
 ### 1. Transcription avec OpenAI Whisper
 - **Pré-analyse** : Lorsqu'un chapitre audio est chargé, le script (`ia_aligner.py`) fait appel au modèle **Whisper** pour transcrire silencieusement l'intégralité du fichier audio.
-- **Segmentation** : Whisper découpe le flux vocal en petits segments, associant chacun à un texte transcrit et des marqueurs de temps (début/fin).
+- **Segmentation** : Whisper découpe le flux vocal en petits segments, associant chacun à un texte transcrit et des marqueurs de temps (début/fin , transcription phonétique ).
 - **Mise en Cache** : Les résultats sont sauvegardés localement de manière transparente, garantissant un chargement quasi instantané lors des ouvertures futures sans re-solliciter le GPU.
 
 ### 2. Algorithme de Recherche et Distance de Levenshtein

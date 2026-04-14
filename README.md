@@ -191,6 +191,44 @@ Lorsque vous interagissez avec une phrase à aligner, le système recherche les 
 
 [Voir le projet](https://github.com/TovoJB/ManualAligment.git)
 
+## 🎙️ Modèle TTS Malagasy (Fine-tuning VITS)
+
+Ce projet présente un modèle **Text-to-Speech (TTS)** en langue malagasy, entraîné avec des données audio personnalisées en utilisant l’architecture VITS.
+
+---
+
+## 🧠 Entraînement du modèle
+
+Le fine-tuning a été réalisé à l’aide du notebook :
+
+📄 `Finetune_VITS.ipynb`
+
+🖼️ Aperçu du processus d'entraînement :
+
+![Training](./photo/train.png)
+
+---
+
+## 🎧 Démo audio
+
+**Texte en entrée :**  
+> *"salama tompoko manao ahoana ianao"*
+
+**Sortie générée par le modèle :**  
+[🎧 Écouter l’audio](./audio/demo.wav)
+
+🖼️ Exemple de génération :
+
+![Demo](./photo/demomodel.png)
+
+---
+
+## 🛠️ Technologies utilisées
+
+- Python  
+- VITS (Variational Inference Text-to-Speech)  
+- PyTorch  
+
 
 ## 🔗 Dossiers — Cliquez pour les détails
 

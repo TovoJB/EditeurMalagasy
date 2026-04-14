@@ -5,6 +5,10 @@
 
 ## Description
 
+https://github.com/user-attachments/assets/04c7caa0-7c16-46ee-aff9-f57195afd01c
+
+
+
 Ce projet vise à développer des outils de traitement automatique du malgache, incluant :
 
 - Correction orthographique  

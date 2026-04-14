@@ -159,6 +159,39 @@ L'entraînement sur GPU a permis d'atteindre une précision de **98.76%** rapide
 
 ---
 
+# 🎙 Malagasy Audio-Text Manual Aligner (PRO)
+
+![Interface Demo](photo/image.png)
+
+Station de travail haute performance pour l'alignement manuel de la Bible en Malgache. Optimisée pour la création de jeux de données (datasets) destinés à l'entraînement de modèles de type TTS ou STT.
+
+## ✨ Fonctionnalités Clés
+- **Visualisation Double** : Waveform et Spectrogramme interactifs.
+- **Smart Seeking** : Estimation automatique des marqueurs audio basée sur le texte sélectionné.
+- **Optimisation IA** : Algorithme de sélection des 2 heures les plus riches linguistiquement.
+- **Workflow Collaboratif** : Synchronisation légère via Git (partage des métadonnées uniquement).
+- **Scripts Utilitaires** : Nettoyage d'audio et reconstruction automatique du dataset.
+- **suggestion de piste audio**  : recherche basé sur l'IA pour trouver rapidement le segment audio
+
+## 🧠 Comment fonctionne la suggestion de piste audio ?
+
+L'outil intègre un moteur de recherche basé sur l'IA pour trouver rapidement le segment audio exact correspondant au texte, en combinant la transcription automatique et la comparaison floue de texte.
+
+### 1. Transcription avec OpenAI Whisper
+- **Pré-analyse** : Lorsqu'un chapitre audio est chargé, le script (`ia_aligner.py`) fait appel au modèle **Whisper** pour transcrire silencieusement l'intégralité du fichier audio.
+- **Segmentation** : Whisper découpe le flux vocal en petits segments, associant chacun à un texte transcrit et des marqueurs de temps (début/fin).
+- **Mise en Cache** : Les résultats sont sauvegardés localement de manière transparente, garantissant un chargement quasi instantané lors des ouvertures futures sans re-solliciter le GPU.
+
+### 2. Algorithme de Recherche et Distance de Levenshtein
+Lorsque vous interagissez avec une phrase à aligner, le système recherche les meilleurs "candidats" de synchronisation :
+- **Fenêtrage glissant** : Le moteur va regrouper différents sous-segments adjacents de Whisper (de 1 jusqu'à 5 segments) pour recréer une phrase ayant une longueur comparable à la cible.
+- **Distance de Levenshtein (`rapidfuzz`)** : L'appariement est évalué via la distance de Levenshtein. C'est un algorithme mathématique mesurant l'écart entre deux textes (le nombre minimum d'opérations : insertions, suppressions, substitutions requises pour transformer le texte Whisper imparfait en texte cible). Les légères erreurs de transcription de Whisper n'empêchent donc pas l'outil de donner un score de similarité robuste (via la méthode `fuzz.ratio`).
+- **Analyse Contextuelle par Bonus** : Pour parer aux phrases ou mots répétés au sein d'un même chapitre, l'algorithme ne s'arrête pas au texte exact. Il évalue la similarité du **contexte gauche** (phrase précédente) et du **contexte droit** (phrase suivante). Une correspondance de contexte applique un boost proportionnel au score de base.
+- **Top 5** : L'outil expurge les résultats se chevauchant dans le temps et vous suggère instantanément les 5 options au score combiné le plus élevé.
+
+[Voir le projet](https://github.com/TovoJB/ManualAligment.git)
+
+
 ## 🔗 Dossiers — Cliquez pour les détails
 
 - **[📂 scraping/](./scraping/README.md)** — Scraping des racines malgaches depuis tenymalagasy.org

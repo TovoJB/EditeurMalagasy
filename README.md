@@ -215,7 +215,7 @@ Le fine-tuning a été réalisé à l’aide du notebook :
 > *"salama tompoko manao ahoana ianao"*
 
 **Sortie générée par le modèle :**  
-[🎧 Écouter l’audio](./audio/demo.wav)
+[🎧 Écouter l’audio](./audio/output.mp3)
 
 🖼️ Exemple de génération :
 

@@ -219,11 +219,15 @@ Le fine-tuning a été réalisé à l’aide du notebook :
 > *"salama tompoko manao ahoana ianao"*
 
 **Sortie générée par le modèle :**  
-[🎧 Écouter l’audio](https://github.com/TovoJB/EditeurMalagasy/blob/main/audio/demo.wav)
 
-🖼️ Exemple de génération :
+https://github.com/user-attachments/assets/06ade4fb-d09f-4c72-9857-c5c711ff02c1
 
-![Demo](./photo/demomodel.png)
+
+
+
+
+
+
 
 ---
 
